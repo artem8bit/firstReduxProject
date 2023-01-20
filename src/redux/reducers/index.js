@@ -1,8 +1,61 @@
+// 6
+
 import { combineReducers } from "redux";
-import textReduser from "./textReduce";
+import textReducer from './textReducer'
+import countReducer from "./countReducer";
+import todosReducer from "./todosReducer";
 
-
-// объединил переданные redusers
 export default combineReducers({
-	text: textReduser, 
-});
+  text: textReducer,
+  count: countReducer,
+  todos: todosReducer,
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { combineReducers } from "redux";
+// import textReducer from "./textReducer";
+
+
+// // объединил переданные reduc ers
+// export default combineReducers({
+// 	text: textReducer, 
+// });
