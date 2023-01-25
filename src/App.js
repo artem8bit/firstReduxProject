@@ -1,5 +1,5 @@
 // 5
-import ToDo from "./ToDo";
+import ToDo from "../src/components/ToDo";
 
 import { Provider } from "react-redux";
 import store from "./redux/store"

@@ -1,31 +1,30 @@
 // 5
 
-import { SET_TODO, CHANGE_TODO, DEL_TODO, EDIT_TODO, COMPLETED_TODO } from "../actions/actionTypes";
+import { SET_TODO, DEL_TODO, EDIT_TODO, HANDLE_EDIT} from "../actions/actionTypes";
 
 const initialValue = [
-
+	{id: 1, title: 'Water', isEdit:false}
 ];
 
 export default function todosReducer(state = initialValue, action) {
 	switch (action.type) {
 		case SET_TODO: {
-			return [...state, {id: Math.floor(Math.random()*1000), title: action.payload, completed: false, isEdit:false}];
+			return [...state, {id: Math.floor(Math.random()*1000), title: action.payload,isEdit:false}];
 		}
-		case CHANGE_TODO: {
-			return state.map((item) => item.id === action.payload ? {...item, completed: !item.completed} : item);
-		}
+		
 		case DEL_TODO: {
 			return state.filter((item) => item.id !== action.payload);
 		}
-		// case EDIT_TODO:{
+
+		case EDIT_TODO:{
+			return state.map( (item) => item.id === action.payload ? {...item, isEdit:!item.isEdit}: item);
 			
-		// 	return state.map( (item) => item.id === action.payload ? {...item, completed:true} : item)
-		// }
-		case COMPLETED_TODO:{
-			
-			return state.map( (item) => item.id === action.payload ? {...item, isEdit:!item.isEdit} : item)
 		}
-		
+
+		case HANDLE_EDIT:{
+			return state.map((item) => item.id === action.payload ? [...state, {...item, title: action.payload}]: item)
+		}
+
 		default: {
 			return state;
 		}
