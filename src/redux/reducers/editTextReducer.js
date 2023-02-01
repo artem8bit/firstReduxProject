@@ -1,11 +1,9 @@
-
-
-import {SET_TEXT} from "../actions/actionTypes";
+import {SET_EDIT_TEXT} from "../actions/actionTypes";
 
 const initialValue = "";
 export default function textReducer(state = initialValue, action) {
 	switch  (action.type) {
-		case SET_TEXT: {
+		case SET_EDIT_TEXT: {
 			return action.payload;
 		}
 
@@ -14,15 +12,3 @@ export default function textReducer(state = initialValue, action) {
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-

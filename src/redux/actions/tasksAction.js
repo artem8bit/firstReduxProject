@@ -1,4 +1,4 @@
-import { SET_TODO,DEL_TODO, EDIT_TODO, HANDLE_EDIT} from "./actionTypes"
+import { SET_TODO,DEL_TODO, EDIT_TODO, HANDLE_EDIT, DONE_TODO} from "./actionTypes"
 
 
 export const setTasks=(data)=>{
@@ -21,11 +21,17 @@ export const setIsEdit = (data) => {
     payload: data,
   }
 }
+export const setIsDone = (data) => {
+  return{
+    type: DONE_TODO,
+    payload: data,
+  }
+}
 
-export const handleEdit = (data) => {
+export const handleEdit = (id, text) => {
   return{
     type:HANDLE_EDIT,
-    payload: data,
+    payload: {id, text}
   }
 }
 

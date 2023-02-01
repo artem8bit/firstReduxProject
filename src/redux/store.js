@@ -1,4 +1,4 @@
-// 5
+
 
 import { createStore } from "redux"
 import reducers from './reducers'
@@ -37,11 +37,3 @@ export default store
 
 
 
-
-// import {createStore} from "redux";
-
-// import reducers from "./reducers"
-
-// const store = createStore(redusers); 
-
-// export default store;
