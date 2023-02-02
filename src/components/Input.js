@@ -7,9 +7,8 @@ import "../App.css";
 const Input = () => {
 	const dispatch = useDispatch("");
 	const text = useSelector((store) => store.text);
-  const todos = useSelector((store) => store.todos);
+  	const todos = useSelector((store) => store.todos);
 	const handleClick = () => {
-		console.log("handleClick");
 		dispatch(setTasks(text));
 		dispatch(setText(""));
 	};
