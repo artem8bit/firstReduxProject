@@ -1,5 +1,6 @@
-// 5
 import ToDo from "../src/components/ToDo";
+import Input from "../src/components/Input";
+
 
 import { Provider } from "react-redux";
 import store from "./redux/store"
@@ -8,6 +9,7 @@ const App = () => {
 	return (
 		<div className="App">
 			<Provider store={store}>
+				<Input/>
 				<ToDo/>
 			</Provider>
 		</div>
