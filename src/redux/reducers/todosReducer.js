@@ -36,7 +36,7 @@ export default function todosReducer(state = initialValue, action) {
 		}
 
 		case EDIT_TODO: {
-			editTodo state.map((item) =>
+			const editTodo = state.map((item) =>
 				item.id === action.payload ? { ...item, isEdit: !item.isEdit } : item
 			);
 			return editTodo;
