@@ -47,7 +47,6 @@ export default function todosReducer(state = initialValue, action) {
 					? { ...item, title: action.payload.text }
 					: item
 			);
-			console.log(updateTodo);
 			return updateTodo;
 		}
 
