@@ -24,21 +24,22 @@ export default function todosReducer(state = initialValue, action) {
 		}
 
 		case DEL_TODO: {
-			return state.filter((item) => item.id !== action.payload);
+			const deleteTodo =  state.filter((item) => item.id !== action.payload);
+			return deleteTodo
 		}
 
 		case DONE_TODO: {
 			const setIsDone =  state.map((item) =>
 				item.id === action.payload ? { ...item, isDone: !item.isDone } : item
 			);
-			console.log(setIsDone);
 			return setIsDone
 		}
 
 		case EDIT_TODO: {
-			return state.map((item) =>
+			editTodo state.map((item) =>
 				item.id === action.payload ? { ...item, isEdit: !item.isEdit } : item
 			);
+			return editTodo;
 		}
 
 		case HANDLE_EDIT: {
